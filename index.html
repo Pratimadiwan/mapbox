@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+
+     
+      .front-page {
+  background-image: url('https://img.freepik.com/premium-photo/clean-minimalist-image-featuring-white-location-pin-blue-map-background-perfect-navigation-apps-travel-services-generative-ai_262708-30584.jpg?size=626&ext=jpg&ga=GA1.1.1021201821.1709896454&semt=ais_hybrid');
+  background-size: cover;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white; /* Change to white for better readability */
+  text-align: center;
+  padding: 20px;
+  position: relative; /* Allow for overlay positioning */
+}
+.front-page h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    
+}
+.front-page p {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 20px;
+}
+span{
+    background-image:url("https://media.istockphoto.com/id/1185382671/vector/abstract-blurred-colorful-background.jpg?s=612x612&w=0&k=20&c=3YwJa7lCw-cQ-hviINULUokL9lYU4RuGjMP_E_0N8E4=") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 4rem;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+      /* Instructions box style */
+      .instructions {
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #000;
+        padding: 20px;
+        border-radius: 10px;
+        width: 50%;
+        margin-bottom: 20px;
+        display: none;
+      }
+
+      .instructions.active {
+        display: block;
+      }
+
+      /* Button style */
+      .btn {
+        margin-top: 15px;
+        background-color: #007bff;
+        color: white;
+        border-radius: 25px;
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Instruction trigger */
+      .show-instructions {
+        background-color: #fff;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 15px;
+      }
+
+      .show-instructions:hover {
+        background-color: #ddd;
+      }
+
+      @media screen and (max-width: 420px) {
+        .front-page {
+          padding: 10px;
+        }
+        .front-page h1 {
+          font-size: 2rem;
+        }
+        .front-page p {
+          font-size: 0.9rem;
+          color: white;
+        }
+        span {
+          font-size: 2.5rem;
+        }
+        .instructions {
+          width: 80%;
+          padding: 10px;
+          font-size: 0.8rem;
+        }
+        .btn {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+        .show-instructions {
+          font-size: 14px;
+          padding: 8px 15px;
+        }
+      }
+    </style>
+    <title>RouteMates</title>
+  </head>
+  <body>
+    <!-- Front page with background and instructions -->
+    <div class="front-page">
+      <h1>Welcome to <span>ROUTEMATE</span></h1>
+      <p>Your one-stop solution to track locations and get directions.</p>
+      
+      <!-- Instructions box -->
+      <div class="instructions" id="instructions">
+        <h2>How to Use</h2>
+        <p> Open the map on the next page.</p>
+        <p>Enter your current location and destination to get directions.</p>
+        <p>Explore various features for enhanced navigation.</p>
+      </div>
+
+      <!-- Button to show instructions -->
+      <button class="show-instructions" onclick="toggleInstructions()">Click here for instructions</button>
+
+      <!-- Main page button -->
+      <button class="btn" onclick="location.href='map.html'">Go to Map</button>
+    </div>
+
+    <script>
+      // Function to toggle instructions visibility
+      function toggleInstructions() {
+        const instructions = document.getElementById('instructions');
+        if (instructions.classList.contains('active')) {
+          instructions.classList.remove('active');
+        } else {
+          instructions.classList.add('active');
+        }
+      }
+    </script>
+  </body>
+</html>
